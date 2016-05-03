@@ -19,6 +19,11 @@
 */
 
 //#include <ADC.h>  // Teensy 3.1 uncomment this line and install http://github.com/pedvide/ADC
+
+#define EAC
+#if defined (EAC)
+#include <SPI.h>}
+#endif
 #include <MozziGuts.h>
 #include <Oscil.h>
 #include <tables/cos8192_int8.h>

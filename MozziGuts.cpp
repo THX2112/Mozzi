@@ -15,6 +15,10 @@
  #include "WProgram.h"
 #endif
 
+#if defined (EAC)						//	Euro
+#include <SPI.h>
+#endif
+
 #include <util/atomic.h>
 #include "MozziGuts.h"
 #include "mozzi_config.h" // at the top of all MozziGuts and analog files
@@ -329,7 +333,20 @@ output =  output_buffer.read();
 AUDIO_CHANNEL_1_OUTPUT_REGISTER = output;
 AUDIO_CHANNEL_2_OUTPUT_REGISTER = 0;
 */
+
+#if defined (EAC)
+
+	uint16_t dac_out = (0b0111000000000000 | (output_buffer.read() << 3));
+	PORTB &= 0b11111011; //faster digitalWrite(10,LOW);
+	SPI.transfer(dac_out >> 8);
+	SPI.transfer(dac_out & 255);
+	PORTB |= 0b00000100; // faster digitalWrite(10,HIGH);
+
+#else
+
 	AUDIO_CHANNEL_1_OUTPUT_REGISTER = output_buffer.read();
+
+#endif
 //}
 
 	// flip signal polarity - instead of signal going to 0 (both pins 0), it goes to pseudo-negative of its current value.
@@ -518,6 +535,10 @@ static void startControl(unsigned int control_rate_hz)
 
 void startMozzi(int control_rate_hz)
 {
+#if defined (EAC)
+	SPI.begin();
+	SPI.setBitOrder(MSBFIRST);
+#endif
 	setupMozziADC(); // you can use setupFastAnalogRead() with FASTER or FASTEST in setup() if desired (not for Teensy 3.1)
 	// delay(200); // so AutoRange doesn't read 0 to start with
 	startControl(control_rate_hz);

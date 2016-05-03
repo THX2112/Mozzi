@@ -43,6 +43,8 @@
     Tim Barrass 2012-13, CC by-nc-sa.
 */
 
+#define EAC
+#include <SPI.h>
 #include <MozziGuts.h>
 #include <Oscil.h>
 #include <tables/cos2048_int8.h> // table for Oscils to play

@@ -24,8 +24,8 @@ and comment out \#define AUDIO_MODE STANDARD.
 @note Teensy 3.1 plays 12 bit audio in STANDARD or STANDARD_PLUS modes, and has no HIFI mode.
 */
 //#define AUDIO_MODE STANDARD
-#define AUDIO_MODE STANDARD_PLUS
-//#define AUDIO_MODE HIFI
+//#define AUDIO_MODE STANDARD_PLUS
+#define AUDIO_MODE HIFI
 
 
 /** @ingroup core

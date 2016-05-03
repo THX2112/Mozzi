@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MozziTestEAC", "..\MozziTestEAC\MozziTestEAC.vcxproj", "{9833D5A9-30D1-41D1-963C-9A7876455FA3}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Control_Oscil_Wash", "examples\02.Control\Control_Oscil_Wash\Control_Oscil_Wash.vcxproj", "{6CD9A1BE-1A41-44F4-8FB5-78B51F6A66AD}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AMsynth_HIFI", "examples\06.Synthesis\AMsynth_HIFI\AMsynth_HIFI.vcxproj", "{AE1040EC-5C5A-46C2-9F43-192407EA35C9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9833D5A9-30D1-41D1-963C-9A7876455FA3}.Debug|x64.ActiveCfg = Debug|x64
+		{9833D5A9-30D1-41D1-963C-9A7876455FA3}.Debug|x64.Build.0 = Debug|x64
+		{9833D5A9-30D1-41D1-963C-9A7876455FA3}.Debug|x86.ActiveCfg = Debug|Win32
+		{9833D5A9-30D1-41D1-963C-9A7876455FA3}.Debug|x86.Build.0 = Debug|Win32
+		{9833D5A9-30D1-41D1-963C-9A7876455FA3}.Release|x64.ActiveCfg = Release|x64
+		{9833D5A9-30D1-41D1-963C-9A7876455FA3}.Release|x64.Build.0 = Release|x64
+		{9833D5A9-30D1-41D1-963C-9A7876455FA3}.Release|x86.ActiveCfg = Release|Win32
+		{9833D5A9-30D1-41D1-963C-9A7876455FA3}.Release|x86.Build.0 = Release|Win32
+		{6CD9A1BE-1A41-44F4-8FB5-78B51F6A66AD}.Debug|x64.ActiveCfg = Debug|x64
+		{6CD9A1BE-1A41-44F4-8FB5-78B51F6A66AD}.Debug|x64.Build.0 = Debug|x64
+		{6CD9A1BE-1A41-44F4-8FB5-78B51F6A66AD}.Debug|x86.ActiveCfg = Debug|Win32
+		{6CD9A1BE-1A41-44F4-8FB5-78B51F6A66AD}.Debug|x86.Build.0 = Debug|Win32
+		{6CD9A1BE-1A41-44F4-8FB5-78B51F6A66AD}.Release|x64.ActiveCfg = Release|x64
+		{6CD9A1BE-1A41-44F4-8FB5-78B51F6A66AD}.Release|x64.Build.0 = Release|x64
+		{6CD9A1BE-1A41-44F4-8FB5-78B51F6A66AD}.Release|x86.ActiveCfg = Release|Win32
+		{6CD9A1BE-1A41-44F4-8FB5-78B51F6A66AD}.Release|x86.Build.0 = Release|Win32
+		{AE1040EC-5C5A-46C2-9F43-192407EA35C9}.Debug|x64.ActiveCfg = Debug|x64
+		{AE1040EC-5C5A-46C2-9F43-192407EA35C9}.Debug|x64.Build.0 = Debug|x64
+		{AE1040EC-5C5A-46C2-9F43-192407EA35C9}.Debug|x86.ActiveCfg = Debug|Win32
+		{AE1040EC-5C5A-46C2-9F43-192407EA35C9}.Debug|x86.Build.0 = Debug|Win32
+		{AE1040EC-5C5A-46C2-9F43-192407EA35C9}.Release|x64.ActiveCfg = Release|x64
+		{AE1040EC-5C5A-46C2-9F43-192407EA35C9}.Release|x64.Build.0 = Release|x64
+		{AE1040EC-5C5A-46C2-9F43-192407EA35C9}.Release|x86.ActiveCfg = Release|Win32
+		{AE1040EC-5C5A-46C2-9F43-192407EA35C9}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
