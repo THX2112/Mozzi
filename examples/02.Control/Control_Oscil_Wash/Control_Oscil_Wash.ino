@@ -1,29 +1,25 @@
 /*  Plays a fluctuating ambient wash,
-    using Mozzi sonification library.
+	using Mozzi sonification library.
   
-    Demonstrates audio and control rate updates.
-    There are 8 oscillators updated at control rate to set
-    the volume of 8 audio oscillators.  Updating the volume
-    at control rate saves processor time, incrementing the
-    Oscils only 128 times per second rather than at the
-    audio rate of 16384 Hz.
+	Demonstrates audio and control rate updates.
+	There are 8 oscillators updated at control rate to set
+	the volume of 8 audio oscillators.  Updating the volume
+	at control rate saves processor time, incrementing the
+	Oscils only 128 times per second rather than at the
+	audio rate of 16384 Hz.
   
-    Circuit: Audio output on digital pin 9 on a Uno or similar, or
-    DAC/A14 on Teensy 3.1, or 
-    check the README or http://sensorium.github.com/Mozzi/
+	Circuit: Audio output on digital pin 9 on a Uno or similar, or
+	DAC/A14 on Teensy 3.1, or 
+	check the README or http://sensorium.github.com/Mozzi/
   
-    Mozzi help/discussion/announcements:
-    https://groups.google.com/forum/#!forum/mozzi-users
+	Mozzi help/discussion/announcements:
+	https://groups.google.com/forum/#!forum/mozzi-users
   
-    Tim Barrass 2012, CC by-nc-sa.
+	Tim Barrass 2012, CC by-nc-sa.
 */
 
 //#include <ADC.h>  // Teensy 3.1 uncomment this line and install http://github.com/pedvide/ADC
 
-#define EAC
-#if defined (EAC)
-#include <SPI.h>}
-#endif
 #include <MozziGuts.h>
 #include <Oscil.h>
 #include <tables/cos8192_int8.h>
@@ -54,7 +50,18 @@ Oscil<COS8192_NUM_CELLS, CONTROL_RATE> kVol8(COS8192_DATA);
 // audio volumes updated each control interrupt and reused in audio till next control
 char v1,v2,v3,v4,v5,v6,v7,v8;
 
+
+
 void setup(){
+
+	/*pinMode(3, OUTPUT);
+
+	if (EACtest) 
+	{
+		digitalWrite(3, HIGH);
+		delay(1000);
+		digitalWrite(3, LOW);
+	}*/
 
   // set harmonic frequencies
   aCos1.setFreq(mtof(60));
@@ -77,7 +84,13 @@ void setup(){
   kVol8.setFreq(0.041f);
 
   v1=v2=v3=v4=v5=v6=v7=v8=127;
+
   
+
+  pinMode(3, OUTPUT);
+
+  //testDAC();
+
   startMozzi(CONTROL_RATE);
 }
 
@@ -99,14 +112,14 @@ void updateControl(){
 
 int updateAudio(){
   long asig = (long)
-    aCos1.next()*v1 +
-    aCos2.next()*v2 +
-    aCos3.next()*v3 +
-    aCos4.next()*v4 +
-    aCos5.next()*v5 +
-    aCos6.next()*v6 +
-    aCos7.next()*v7 +
-    aCos8.next()*v8;
+	aCos1.next()*v1 +
+	aCos2.next()*v2 +
+	aCos3.next()*v3 +
+	aCos4.next()*v4 +
+	aCos5.next()*v5 +
+	aCos6.next()*v6 +
+	aCos7.next()*v7 +
+	aCos8.next()*v8;
   asig >>= 9;
   return (int) asig;
 }

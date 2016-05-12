@@ -5,6 +5,11 @@
 Edit this file if you want to choose your own configuration options.
 */
 
+//
+//	If using Syinsi.com EuroArdCore module
+//
+
+#define EAC 1
 
 /**  @ingroup core
 AUDIO_MODE holds the audio mode setting.
@@ -23,9 +28,9 @@ and comment out \#define AUDIO_MODE STANDARD.
 
 @note Teensy 3.1 plays 12 bit audio in STANDARD or STANDARD_PLUS modes, and has no HIFI mode.
 */
-//#define AUDIO_MODE STANDARD
+#define AUDIO_MODE STANDARD
 //#define AUDIO_MODE STANDARD_PLUS
-#define AUDIO_MODE HIFI
+//#define AUDIO_MODE HIFI
 
 
 /** @ingroup core

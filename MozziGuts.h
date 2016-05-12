@@ -139,10 +139,13 @@ HIFI is not available/not required on Teensy 3.1.
 #define STANDARD 0
 #define STANDARD_PLUS 1
 #define HIFI 2
-
+#define EAC 1
 
 #include "mozzi_config.h" // User can change the config file to set audio mode
 
+#ifdef EAC						//	Euro
+#include <SPI.h>
+#endif
 
 // Print warning/reminder about the AUDIO_MODE setting to the arduino console while compiling
 #if AUDIO_MODE == STANDARD
@@ -252,7 +255,7 @@ on which one(s) are required for other tasks, so for example the control
 interrupt (Timer 0) could be suspended while audio continues.*/
 void pauseMozzi();
 
-
+void testDAC();
 
 /** @ingroup core
 Restores Mozzi audio and control interrupts, if they have been temporarily

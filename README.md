@@ -2,9 +2,27 @@
 
 ###sound synthesis library for Arduino  
 
-
 Tim Barrass  
 version 2015-05-11-20:23  
+
+***
+
+####Modified for EuroArdCore
+
+Add "#define EAC 1" to mozzi_config.h to use with EuroArdCore (already done).
+
+Tested with "AUDIO_MODE STANDARD"
+
+All examples should work without modification, aside from changing/adding controls.
+
+To Do:
+
+-   Both DAC channels.
+-   Test "HIFI" mode.
+
+
+
+***
 
 Currently your Arduino can only beep like a microwave oven. Mozzi brings
 your Arduino to life by allowing it to produce much more complex and interesting

@@ -37,15 +37,14 @@ AudioDelayFeedback <128> aDel2;
 unsigned int del_samps1;
 unsigned int del_samps2;
 
-
 void setup(){
   aTriangle1.setFreq(mtof(48.f));
   kDelSamps1.setFreq(.163f); // set the delay time modulation frequency (ie. the sweep frequency)
-  aDel1.setFeedbackLevel(-111); // can be -128 to 127
+  aDel1.setFeedbackLevel((analogRead(0) / 4) - 127); // can be -128 to 127
 
   aTriangle2.setFreq(mtof(52.f));
   kDelSamps2.setFreq(1.43f); // set the delay time modulation frequency (ie. the sweep frequency)
-  aDel2.setFeedbackLevel(109); // can be -128 to 127
+  aDel2.setFeedbackLevel((analogRead(1)/4)-127); // can be -128 to 127
 
   startMozzi(CONTROL_RATE);
 }

@@ -8,14 +8,14 @@
  * Mozzi by Tim Barrass is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
  *
  */
-
+ 
  #if ARDUINO >= 100
  #include "Arduino.h"
 #else
  #include "WProgram.h"
 #endif
 
-#if defined (EAC)						//	Euro
+#ifdef EAC						
 #include <SPI.h>
 #endif
 
@@ -533,9 +533,15 @@ static void startControl(unsigned int control_rate_hz)
 }
 
 
+void testDAC() {
+
+	digitalWrite(3, HIGH);
+}
+
 void startMozzi(int control_rate_hz)
 {
-#if defined (EAC)
+#if defined EAC
+	//testDAC();
 	SPI.begin();
 	SPI.setBitOrder(MSBFIRST);
 #endif

@@ -18,7 +18,13 @@
     <None Include="Control_Oscil_Wash.ino" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="__vm\.Control_Oscil_Wash.vsarduino.hxxx">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="__vm\.Control_Oscil_Wash.vsarduino.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Libraries\Mozzi\MozziGuts.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
