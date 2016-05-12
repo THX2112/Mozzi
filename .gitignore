@@ -91,3 +91,10 @@ po/.intltool-merge-cache
 po/Makefile.in.in
 po/POTFILES
 po/*.gmo
+
+
+__vm
+Release/
+Debug/
+*.vcxproj*
+
